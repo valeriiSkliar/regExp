@@ -9,7 +9,7 @@ workersList.forEach(item => {
     let matches = item.match(regExp);
     // console.log(matches);
     newObj.name = matches.groups['name'];
-    newObj.salary = matches.groups['salary'];
+    newObj.salary = Number(matches.groups['salary']);
     newObj.currency = matches.groups['currency'];
     newObj.pets = matches.groups['pets'];
     workersPars.push(newObj)
