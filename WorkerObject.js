@@ -2,8 +2,13 @@ class WorkerObject {
     constructor(matches, index) {
         this.index = index;
         this.matches = matches;
-        this.name = this.matches.groups['name'];
-        this.surname = this.matches.groups['surname'] === undefined ? 'none' : this.matches.groups['surname'];;
+        if (matches.groups['name'].includes(' ')){
+            surname = matches.groups['name'].match(/[a-z]+/gi)[1]
+        } else {
+            surname = 'none';
+        }
+        this.name = this.matches.groups['name'].match(/[a-z]+/gi)[0]
+        this.surname = surname;
         this.salary = +this.matches.groups['salary'];
         this.currency = this.matches.groups['currency'];
         this.pets = this.matches.groups['pets'].split(' ');
