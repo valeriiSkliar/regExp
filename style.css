@@ -3,3 +3,24 @@ html, body{
     height: 100%;
     margin: 0;
 }
+
+.controlButton {
+    border: black;
+    width: 24.7%
+}
+
+.showAll {
+    background-color: green;
+}
+
+.blackList {
+    background-color: orange;
+}
+
+.fire {
+    background-color: red;
+}
+
+.hide {
+    background-color: orangered;
+}
