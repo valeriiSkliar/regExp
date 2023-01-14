@@ -4,9 +4,6 @@ class WorkerObject {
         this.matches = matches;
         this.name = this.matches.groups['name'].match(/[a-z]+/gi)[0]
         this.surname = this.getSurname();
-
-
-
         this.salary = +this.matches.groups['salary'];
         this.currency = this.matches.groups['currency'];
         this.pets = this.matches.groups['pets'].split(' ');
@@ -21,6 +18,7 @@ class WorkerObject {
         } else {
             this.surname = 'none';
         }
+        return this.surname
     }
     createHTMLElem() {
         let wrap = document.createElement('div');
@@ -42,3 +40,4 @@ class WorkerObject {
         return wrap;
     }
 }
+
