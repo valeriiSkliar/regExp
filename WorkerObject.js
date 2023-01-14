@@ -2,13 +2,11 @@ class WorkerObject {
     constructor(matches, index) {
         this.index = index;
         this.matches = matches;
-        if (matches.groups['name'].includes(' ')){
-            surname = matches.groups['name'].match(/[a-z]+/gi)[1]
-        } else {
-            surname = 'none';
-        }
         this.name = this.matches.groups['name'].match(/[a-z]+/gi)[0]
-        this.surname = surname;
+        this.surname = this.getSurname();
+
+
+
         this.salary = +this.matches.groups['salary'];
         this.currency = this.matches.groups['currency'];
         this.pets = this.matches.groups['pets'].split(' ');
@@ -16,6 +14,13 @@ class WorkerObject {
         this.conditionToFire = '';
         this.blackList = false;
         this.HTMLElem = this.createHTMLElem();
+    }
+    getSurname(){
+        if (this.matches.groups['name'].includes(' ')){
+            this.surname = this.matches.groups['name'].match(/[a-z]+/gi)[1]
+        } else {
+            this.surname = 'none';
+        }
     }
     createHTMLElem() {
         let wrap = document.createElement('div');
