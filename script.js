@@ -8,7 +8,6 @@ workersList.forEach((item, index) => {
     let matches = item.match(regExp);
     workersPars.push( new WorkerObject(matches, index))
 });
-console.log(workersPars);
 
 
 //  МОДУЛЬ ОТРИСОВКИ ПЛИТОК
@@ -19,31 +18,3 @@ document.querySelector('.showAll').addEventListener('click', () => {
 })
 // ************************
 
-
-
-// function addToBody(obj, task) {
-//     let wrap = document.createElement('div');
-//     let workerName = document.createElement('h4');
-//     wrap.append(header);
-//     workerName.textContent = `exercise_${task - 1} =>`
-//     wrap.classList.add(`wrap_${task}`);
-//     for (let i = 0; i < obj['textarea']; i += 1) {
-//         let elem = document.createElement('textarea');
-//         elem.setAttribute('id', `textarea_${i}_${task}`);
-//         wrap.append(elem)
-//     }
-//     for (let i = 0; i < obj['input']; i += 1) {
-//         let elem = document.createElement('input');
-//         elem.setAttribute('id', `input_${i}_${task}`);
-//         wrap.append(elem)
-//     }
-//     for (let i = 0; i < obj['button']; i += 1) {
-//         let elem = document.createElement('button');
-//         elem.setAttribute('id', `button_${i}_${task}`);
-//         elem.textContent = `button_${i}_${task}`
-//         wrap.append(elem)
-//     }
-//     wrap.append(document.createElement('hr'));
-//     container.append(wrap);
-//     return wrap;
-// }

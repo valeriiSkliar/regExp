@@ -1,6 +1,17 @@
 'use strict'
 
 let surname = ['Lom', 'Perker', 'Dalas', 'Manson', 'Cree'];
+// // наполнение массива "surname" автоматически (совместим)
+// surname = workersPars.reduce((accum, item) => {
+//     if (!accum.includes(item.surname)) {
+//         if (item.surname !== 'none') {
+//             accum.push(item.surname);
+//         }
+//     }
+//     return accum;
+// }, []);
+// ****************************
+   // здесь бы генерил черный список через массив blackList.
 let firedSurname1;
 let firedSurname2;
 let firedSurname3;
@@ -14,6 +25,7 @@ function getRandomSurname() { //Получаем три рандомные фа�
     firedSurname2 = surname[rand()];
     firedSurname3 = surname[rand()];
 }
+
 getRandomSurname();
 
 let blackList = [firedSurname1, firedSurname2, firedSurname3, 'hamster', '€', '£']
@@ -41,18 +53,18 @@ let counter = 0
 document.querySelector('.blackList').addEventListener('click', () => { //Реализация кнопки, что создает черный список
     counter = 1;
     let list;
-    if(count === 0){
-    list = document.createElement('div');
-    function create() {
-        list.classList.add('list');
-    }
-    create();
+    if (count === 0) {
+        list = document.createElement('div');
+        function create() {
+            list.classList.add('list');
+        }
+        create();
         list.innerHTML = blackListSurname;
         list.classList.add('displayed');
 
-    body.append(list);
-    count = 1;
-}
+        body.append(list);
+        count = 1;
+    }
     document.querySelector('.hide').addEventListener('click', () => { //Кнопка, что прячет черный список
         list.classList.add('nonDisplayed')
         count = 0;
