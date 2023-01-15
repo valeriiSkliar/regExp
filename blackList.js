@@ -38,9 +38,6 @@ function getRandomSurname() { //Получаем три рандомные фа�
     firedSurname1 = surname[rand()];     // на мой взгляд, не учитывается возможность отсутствия фамилии у рабочего 
     firedSurname2 = surname[rand()]; 
     firedSurname3 = surname[rand()];
-    firedSurname1 = 'none';
-    firedSurname2 = 'none';
-    firedSurname3 = 'none';
 }
 
 getRandomSurname();
