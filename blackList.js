@@ -1,6 +1,6 @@
 'use strict'
 
-let surname = ['Lom', 'Perker', 'Dalas', 'Manson', 'Cree'];
+let surname = ['Lom', 'Perker', 'Dalas', 'Manson', 'Cree', 'none'];
 // // наполнение массива "surname" автоматически (совместим)
 // surname = workersPars.reduce((accum, item) => {
 //     if (!accum.includes(item.surname)) {
@@ -33,7 +33,7 @@ let fired = '';
 
 function getRandomSurname() { //Получаем три рандомные фамилии на увольнение
     function rand() {
-        return Math.floor(Math.random() * 5);
+        return Math.floor(Math.random() * 6);
     }
     firedSurname1 = surname[rand()];     // на мой взгляд, не учитывается возможность отсутствия фамилии у рабочего 
     firedSurname2 = surname[rand()]; 
@@ -58,10 +58,13 @@ function allFired() { //Функция выводит фамилии людей 
     if (firedSurname1 === firedSurname2 && firedSurname1 === firedSurname3 && firedSurname2 === firedSurname3) {
         fired = firedSurname1;
     }
+    if(firedSurname1 === 'none' && firedSurname2 === 'none' && firedSurname3 === 'none') {
+        fired = '';
+    }
     return fired; // я сколько не проверял не выдает три фамилии, всегда только две
 }
 
-let blackListSurname = 'Black List<br>Surname: ' + allFired() + ';<br>People who get paid in: €, £;<br> People with that pet: hamster.'
+let blackListSurname = 'Black List<br>Surname: ' + allFired().replace(/none/gi, '') + ';<br>People who get paid in: €, £;<br> People with that pet: hamster.'
 let count = 0;
 let counter = 0
 document.querySelector('.blackList').addEventListener('click', () => { //Реализация кнопки, что создает черный список
