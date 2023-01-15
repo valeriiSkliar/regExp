@@ -12,6 +12,20 @@ let surname = ['Lom', 'Perker', 'Dalas', 'Manson', 'Cree'];
 // }, []);
 // ****************************
    // здесь бы генерил черный список через массив blackList.
+//    моя реализация:
+
+// document.querySelector('.makeBlackList').addEventListener('click', makeBlackList, once);
+// function makeBlackList(event) {
+//     blackListArr = [];
+//     event.target.disabled = true;
+//     for (let i = 0; i < 3; i += 1) { // цикл на три итерации генерит случайные фамилии
+//         let roulette = Math.floor(Math.random() * workersPars.length);
+//         if (workersPars[roulette].surname) {
+//             setBlackListItem(workersPars[roulette]);
+//         }
+//     }
+//     blackListArr.forEach(item => renderBlackListItem(item)); // отдельная функция отвечает за рендер черного списка. 
+// }
 let firedSurname1;
 let firedSurname2;
 let firedSurname3;
@@ -21,8 +35,8 @@ function getRandomSurname() { //Получаем три рандомные фа�
     function rand() {
         return Math.floor(Math.random() * 5);
     }
-    firedSurname1 = surname[rand()];
-    firedSurname2 = surname[rand()];
+    firedSurname1 = surname[rand()];     // на мой взгляд, не учитывается возможность отсутствия фамилии у рабочего 
+    firedSurname2 = surname[rand()]; 
     firedSurname3 = surname[rand()];
 }
 
@@ -44,7 +58,7 @@ function allFired() { //Функция выводит фамилии людей 
     if (firedSurname1 === firedSurname2 && firedSurname1 === firedSurname3 && firedSurname2 === firedSurname3) {
         fired = firedSurname1;
     }
-    return fired;
+    return fired; // я сколько не проверял не выдает три фамилии, всегда только две
 }
 
 let blackListSurname = 'Black List<br>Surname: ' + allFired() + ';<br>People who get paid in: €, £;<br> People with that pet: hamster.'
