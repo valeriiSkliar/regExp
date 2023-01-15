@@ -6,6 +6,10 @@ document.querySelector('.fire').addEventListener('click', () => { //Реализ
             if (workersPars[i].surname === blackList[0] || workersPars[i].surname === blackList[1] || workersPars[i].surname === blackList[2]) {
                 let currElem = document.getElementsByClassName('worker_' + i)[0];
                 currElem.style = 'color: red'
+            } 
+            if (blackList[0] === 'none' && blackList[1] === 'none' && blackList[2] === 'none') {
+                let currElem = document.getElementsByClassName('worker_' + i)[0];
+                currElem.style = 'color: black'
             }
             if (workersPars[i].currency === blackList[4] || workersPars[i].currency === blackList[5]) {
                 let currElem = document.getElementsByClassName('worker_' + i)[0];
