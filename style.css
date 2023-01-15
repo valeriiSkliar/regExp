@@ -1,45 +1,80 @@
-html, body{
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
-.list {
-    display: inline-block;
-    width: 300px;
-    height: auto;
-    border-style: solid;
-    text-align: center;
-    position: fixed;
-    top:5%;
-    right: 1%;
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.workers {
+    position: relative;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(188, 143, 143, 0.555);
+    margin: 1%;
+    padding: 1%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
 }
 
 .controlButton {
-    border: black;
-    width: 24.7%
+    padding: 3px;
+    height: fit-content;
 }
 
-.showAll {
-    background-color: green;
+h5 {
+    margin: 0;
 }
 
-.blackList {
-    background-color: orange;
-}
-
-.fire {
-    background-color: red;
-}
-
-.hide {
-    background-color: orangered;
-}
-
-.displayed {
-    display: block;
-}
-
-.nonDisplayed {
+input {
+    width: 20px;
+    height: 20px;
     display: none;
+}
+
+.checked {
+    background: rgba(8, 99, 236, 0.39);
+}
+
+
+button {
+    width: 50%;
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 10%;
+    align-self: flex-start;
+}
+ul{
+    width: 50%;
+}
+select {
+    width: 50%;
+}
+
+input {
+    margin-top: 5px;
+    width: 90%;
+}
+
+hr {
+    border: solid 2px;
+    background: black;
+    margin: 0;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.fired {
+    user-select: none;
+    text-transform: uppercase;
+    z-index: 1000;
 }
