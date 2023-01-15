@@ -37,7 +37,9 @@ function allFired() { //Функция выводит фамилии людей 
 
 let blackListSurname = 'Black List<br>Surname: ' + allFired() + ';<br>People who get paid in: €, £;<br> People with that pet: hamster.'
 let count = 0;
+let counter = 0
 document.querySelector('.blackList').addEventListener('click', () => { //Реализация кнопки, что создает черный список
+    counter = 1;
     let list;
     if(count === 0){
     list = document.createElement('div');
